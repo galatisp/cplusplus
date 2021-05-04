@@ -166,6 +166,7 @@ int main()
     scanf("%d", &num);
     list = add(num, list);
     print(list);
+    
 
     printf("Poion aritho na prosthesw sto TELOS ths listas?");
     scanf("%d", &num);
