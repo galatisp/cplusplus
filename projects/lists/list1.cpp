@@ -152,7 +152,7 @@ nodeptr lastNode(nodeptr list)
 
 int main()
 {
-    nodeptr list = readList();
+   nodeptr list = readList();
    
 
     nodeptr rev = reverseList(list);
