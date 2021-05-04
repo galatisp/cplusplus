@@ -155,9 +155,9 @@ int main()
     nodeptr list = readList();
    
 
-    // nodeptr rev = reverseList(list);
-    // print(rev);
-    // print(list);
+    nodeptr rev = reverseList(list);
+    print(rev);
+    print(list);
     //to handle character input which stops readList
     char line[256];
     fgets(line, sizeof(line), stdin);
