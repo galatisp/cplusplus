@@ -162,17 +162,17 @@ int main()
     char line[256];
     fgets(line, sizeof(line), stdin);
     int num; 
-    printf("Poion aritho na prosthesw sthn arxh ths listas?");
+    printf("Poion aritho na prosthesw sthn arxh ths listas? ");
     scanf("%d", &num);
     list = add(num, list);
     print(list);
 
-    printf("Poion aritho na prosthesw sto TELOS ths listas?");
+    printf("Poion aritho na prosthesw sto TELOS ths listas? ");
     scanf("%d", &num);
     addAtEnd(num, list);
     print(list);
  
-    printf("Poion aritho na sbiso apo th lista?");
+    printf("Poion aritho na sbiso apo th lista? ");
     scanf("%d", &num);
     list = remove(num, list);
     print(list);
