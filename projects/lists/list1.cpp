@@ -155,8 +155,8 @@ int main()
    nodeptr list = readList();
    
 
-    nodeptr rev = reverseList(list);
-    print(rev);
+    // nodeptr rev = reverseList(list);
+    // print(rev);
     print(list);
     //to handle character input which stops readList
     char line[256];

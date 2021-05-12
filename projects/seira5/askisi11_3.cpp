@@ -14,10 +14,8 @@ bool check_elements(int **arr, int n)
     // Traversing the array
     for (int i = 0; i < n; i++)
     {
-
-        for (int j = 0; j < n; j++)
+       for (int j = 0; j < n; j++)
         {
-
             // If an element is in range
             if (abs(arr[i][j]) >= 0 && abs(arr[i][j]) <= range)
             {
@@ -90,12 +88,12 @@ bool isMagicSquare(int **mat, int N)
     }
 
     // For sums of Columns
-    for (int i = 0; i < N; i++)
+    for (int j = 0; j < N; j++)
     {
 
         int colSum = 0;
-        for (int j = 0; j < N; j++)
-            colSum += mat[j][i];
+        for (int i = 0; i < N; i++)
+            colSum += mat[i][j];
 
         // check if every column sum is
         // equal to prime diagonal sum
