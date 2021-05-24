@@ -159,7 +159,7 @@ int main()
     //     stringstream(line) >> n;
     // } while ((n < 1) || (n > 100));
     n = N;    
-    fp.open("numbers.txt", ios::in);
+    fp.open("random_numbers.txt", ios::in);
     int i = 0;
     while ((fp >> num) && (i<N))
     {   
@@ -169,7 +169,7 @@ int main()
 
     fp.close();
 
-    fp.open("numbers2_wrong.txt", ios::in);
+    fp.open("random_numbersB.txt", ios::in);
     i = 0;
     while ((fp >> num) && (i<N))
     {   
@@ -182,6 +182,9 @@ int main()
 
     mergeSort(arr1, 0, n - 1);
     mergeSort(arr2, 0, n - 1);
+
+	// sort(arr1, arr1 + n);
+	// sort(arr2, arr2 + n);
    
     if (compare(arr1, arr2, n))
         cout << "Arrays contain the same elements \n";

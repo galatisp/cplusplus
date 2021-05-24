@@ -1,57 +1,83 @@
-// C++ program to implement Naive approach
-// to remove duplicates
+// C++ program to find given two array
+// are equal or not using hashing technique
+#include <bits/stdc++.h>
 #include <iostream>
-#include <vector>
-#include <unordered_map>
+#include <fstream>
+#include <iomanip>
+#define N 50000
 using namespace std;
 
-bool areSameSet(vector<int> A, vector<int> B)
+// Returns true if arr1[0..n-1] and arr2[0..m-1]
+// contain same elements.
+bool areEqual(int arr1[], int arr2[], int n, int m)
 {
-	int n = A.size();
-	if (B.size() != n)
+	// If lengths of arrays are not equal
+	if (n != m)
 		return false;
 
-	// Create a hash table to
-	// number of instances
-	unordered_map<int, int> m;
+	// Store arr1[] elements and their counts in
+	// hash map
+	unordered_map<int, int> mp;
+	for (int i = 0; i < n; i++)
+		mp[arr1[i]]++;
 
-	// for each element of A
-	// increase it's instance by 1.
-	for (int i = 0; i < n; i++)
-		m[A[i]]++;
-	
-	// for each element of B
-	// decrease it's instance by 1.
-	for (int i = 0; i < n; i++)
-		m[B[i]]--;
-	
-	// Iterate through map and check if
-	// any entry is non-zero
-	for (auto i : m)
-		if (i.second != 0)
+	// Traverse arr2[] elements and check if all
+	// elements of arr2[] are present same number
+	// of times or not.
+	for (int i = 0; i < n; i++) {
+		// If there is an element in arr2[], but
+		// not in arr1[]
+		if (mp.find(arr2[i]) == mp.end())
 			return false;
-	
+
+		// If an element of arr2[] appears more
+		// times than it appears in arr1[]
+		if (mp[arr2[i]] == 0)
+			return false;
+
+		mp[arr2[i]]--;
+	}
+
 	return true;
 }
 
+// Driver Code
 int main()
 {
-	vector<int> A, B;
-	A.push_back(12);
-	A.push_back(15);
-	A.push_back(10);
-	A.push_back(6);
-	A.push_back(8);
-	A.push_back(4);
-	A.push_back(2);
+	 int arr1[N], arr2[N];
+    fstream fp;
+    int num;
+    
+    
+    fp.open("random_numbers.txt", ios::in);
+    int i = 0;
+    while ((fp >> num) && (i<N))
+    {   
+         
+        arr1[i++] = num;
+    }
 
-	B.push_back(2);
-	B.push_back(5);
-	B.push_back(6);
-	B.push_back(8);
-	B.push_back(10);
-	B.push_back(12);
-	B.push_back(15);
+    fp.close();
 
-	areSameSet(A, B)? cout << "Yes" : cout << "No";
+    fp.open("random_numbersB.txt", ios::in);
+    i = 0;
+    while ((fp >> num) && (i<N))
+    {   
+         
+        arr2[i++] = num;
+    }
+
+    fp.close();
+
+
+    // mergeSort(arr1, 0, n - 1);
+    // mergeSort(arr2, 0, n - 1);
+	int n = sizeof(arr1) / sizeof(int);
+	int m = sizeof(arr2) / sizeof(int);
+
+	if (areEqual(arr1, arr2, n, m))
+		cout << "Yes";
+	else
+		cout << "No";
+	return 0;
 }

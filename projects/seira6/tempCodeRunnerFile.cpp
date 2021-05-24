@@ -1,1 +1,1 @@
-if (isdelimiter(ch))
+#include <bits/stdc++.h>

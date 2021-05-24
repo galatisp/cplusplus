@@ -175,22 +175,25 @@ int main()
 	
 	do
 	{
-		//    printf("Dose plithos arithmon:");
+		printf("Dose plithos arithmon:");
 		scanf("%d", &n);
 	} while ((n < 1) || (n > N));
 
+printf("Dose prwto set arithmon:");
+		
 	int i = 0;
 	while (i < n)
 	{
 		scanf("%d", &arr1[i++]);
 	}
 
+printf("Dose deutero set arithmon:");
 	i = 0;
 	while (i < n)
 	{
 		scanf("%d", &arr2[i++]);
-	}
-
+	} 
+	printf("computing\n");
 	mergeSort(arr1, 0, n - 1);
 	mergeSort(arr2, 0, n - 1);
 	// printf("n = %d\n", n);
@@ -204,8 +207,8 @@ int main()
 		cout << arr1[maxPos]<<endl;
 	}
 
-	printArray(arr1, n);
-	printArray(arr2, n);
+	// printArray(arr1, n);
+	// printArray(arr2, n);
 
 	return 0;
 }

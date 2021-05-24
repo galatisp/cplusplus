@@ -10,14 +10,15 @@ using namespace std;
 int main()
 {
     ofstream fp;
-    fp.open("numbers.txt", ios::app);
+    fp.open("random_numbersB.txt", ios::app);
    
     int arr[N];
      
     //write numbers to file
     int i;
+    srand(time(0));
     for (i = 0; i < N; i++)
-        fp << i << " ";
+        fp << rand() << " ";
 
     fp.close();
 
